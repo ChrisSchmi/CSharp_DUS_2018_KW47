@@ -12,12 +12,12 @@ namespace HalloLinq
 
     class HalloDelegate
     {
-       public event Action<string, DateTime, long> MeinEvent;
+        public event Action<string, DateTime, long> MeinEvent;
 
         public HalloDelegate()
         {
-
-            MeinEvent("Hallo", DateTime.Now, 857575);
+            if (MeinEvent != null)
+                MeinEvent("Hallo", DateTime.Now, 857575);
 
             EinfacherDelegate meinDele = EinfacheMethode;
             Action meinDeleAlsActio = EinfacheMethode;
