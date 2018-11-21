@@ -26,6 +26,11 @@ namespace HalloLinq
         {
             InitializeComponent();
 
+            this.Loaded += MainWindow_Loaded;
+            this.Loaded += MainWindow_Loaded;
+            this.Loaded += MainWindow_Loaded;
+            this.Loaded -= MainWindow_Loaded;
+
 
             for (int i = 0; i < 100; i++)
             {
@@ -43,8 +48,23 @@ namespace HalloLinq
             string ausgabe = "Hallo " + txt + " Heute sind " + zahl + "°C";
             string ausgabeF = string.Format("Hallo {0} Heute sind {1:00} °C", txt, zahl);
             string ausgabeI = $"Hallo {txt} Heute sind {zahl:000} °C";
+
+
+
+
+            new HalloDelegate().MeinEvent += MainWindow_MeinEvent;
         }
 
+        private void MainWindow_MeinEvent(string arg1, DateTime arg2, long arg3)
+        {
+       
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("lala");
+            
+        }
 
         private void AlleAnzeigen(object sender, RoutedEventArgs e)
         {
@@ -54,10 +74,29 @@ namespace HalloLinq
         private void AlleAb35(object sender, RoutedEventArgs e)
         {
             var query = from p in persons
-                        where p.Birthdate < DateTime.Now.AddYears(-35)
+                        where p.Birthdate < DateTime.Now.AddYears(-35) && p.Name.StartsWith("F")
+                        orderby p.Age, p.Birthdate.Month
                         select p;
+            //select new { DerName = p.Name, Monat = p.Birthdate.Month };
 
             myGrid.ItemsSource = query.ToList();
+        }
+
+        private void AlleAb35LAMB(object sender, RoutedEventArgs e)
+        {
+            myGrid.ItemsSource = persons.Where(x => x.Birthdate < DateTime.Now.AddYears(-35) && x.Name.StartsWith("F"))
+                                        .OrderBy(x => x.Age)
+                                        .ThenBy(x => x.Birthdate.Month).ToList();
+                                        //.Select(x=>new { lala=x.Name,})
+        }
+
+        private void ErstenAbMai(object sender, RoutedEventArgs e)
+        {
+            //Person p = persons.OrderBy(x => x.Age).FirstOrDefault(x => x.Birthdate.Month == 5);
+            //if (p != default(Person))
+            //    MessageBox.Show(p.Name);
+
+            MessageBox.Show(persons.Count(x => x.Age > 35).ToString());
         }
     }
 }

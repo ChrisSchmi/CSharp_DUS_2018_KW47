@@ -11,6 +11,8 @@
         <WrapPanel DockPanel.Dock="Top" Margin="6">  
             <Button Click="AlleAnzeigen">Alle</Button>
             <Button Click="AlleAb35">Alle ab 35</Button>
+            <Button Click="AlleAb35LAMB">Alle ab 35 LAMBDA</Button>
+            <Button Click="ErstenAbMai">Erster ab Mai</Button>
 
         </WrapPanel>
         <DataGrid Name="myGrid"/>
