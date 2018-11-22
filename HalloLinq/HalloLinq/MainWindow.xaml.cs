@@ -74,7 +74,7 @@ namespace HalloLinq
         {
             var query = from p in persons
                         where p.Birthdate < DateTime.Now.AddYears(-35) && p.Name.StartsWith("F")
-                        orderby p.Age, p.Birthdate.Month
+                        orderby p.Age, p.Birthdate.Month descending
                         select p;
             //select new { DerName = p.Name, Monat = p.Birthdate.Month };
 
