@@ -107,14 +107,50 @@ namespace HalloLinq
             if (ws == null)
                 ws = pack.Workbook.Worksheets.Add("Test");
 
-            for (int i = 0; i < persons.Count; i++)
+
+            //for (int i = 0; i < persons.Count; i++)
+            //{
+            //    ws.Cells[i + 1, 1].Value = persons[i].Name;
+            //    ws.Cells[i + 1, 2].Value = persons[i].Age;
+
+            //    ws.Cells[i + 1, 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.LightHorizontal;
+            //    ws.Cells[i + 1, 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightSteelBlue);
+            //}
+            int row = 1;
+            int col = 1;
+            foreach (var monat in persons.GroupBy(x => x.Birthdate.Month).OrderBy(x => x.Key))
             {
-                ws.Cells[i + 1, 1].Value = persons[i].Name;
+                row = 1;
+                ws.Cells[row, col].Value = $"{new DateTime(2000, monat.Key, 1).ToString("MMMM")} [{monat.Count()}]";
+                row++;
+                foreach (var p in monat.OrderByDescending(x => x.Name))
+                {
+                    ws.Cells[row, col].Value = p.Name;
+                    if (row % 3 == 0 && col % 2 == 0)
+                    {
+                        ws.Cells[row, col].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                        ws.Cells[row, col].Style.Fill.BackgroundColor.Indexed = 4;
+                    }
+                    row++;
+                }
+                col++;
             }
 
             pack.Save();
 
             Process.Start(filename);
+        }
+
+        private void QueryExcel(object sender, RoutedEventArgs e)
+        {
+            var fi = new FileInfo(filename);
+            var pack = new ExcelPackage(fi);
+            var ws = pack.Workbook.Worksheets.First();
+
+
+            var result = ws.Cells["A1:L100"].Where(x => x.Style.Fill.BackgroundColor.Indexed == 4).Select(x => x.Value.ToString());
+
+            MessageBox.Show(string.Join(Environment.NewLine, result));
         }
     }
 }

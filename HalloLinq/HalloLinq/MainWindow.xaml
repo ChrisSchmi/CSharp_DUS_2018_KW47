@@ -14,6 +14,8 @@
             <Button Click="AlleAb35LAMB">Alle ab 35 LAMBDA</Button>
             <Button Click="ErstenAbMai">Erster ab Mai</Button>
             <Button Click="Export">Export to Excel</Button>
+            <Button Click="QueryExcel">Query Excel</Button>
+
         </WrapPanel>
         <DataGrid Name="myGrid"/>
     </DockPanel>
