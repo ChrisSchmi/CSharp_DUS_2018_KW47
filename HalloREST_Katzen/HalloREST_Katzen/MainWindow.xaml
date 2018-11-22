@@ -1,0 +1,17 @@
+﻿<Window x:Class="HalloREST_Katzen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloREST_Katzen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top" Margin="12">
+            <Button Click="LoadJson">Lade JSON</Button>
+        </WrapPanel>
+        <TextBox TextWrapping="Wrap"  IsReadOnly="True" Width="200" Name="jsonTb" 
+                 DockPanel.Dock="Left"/>
+        <DataGrid Name="myGrid"/>
+    </DockPanel>
+</Window>
