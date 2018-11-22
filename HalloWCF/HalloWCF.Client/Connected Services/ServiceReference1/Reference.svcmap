@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="00ee2c32-2fbc-4b5d-9abb-774d0d74b25c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/HalloWCF.Host/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="bb8c9e87-6370-47d4-9cbd-2f67c1695ad6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HalloWCF.Host/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2e37aa6b-8538-41a0-9701-ddceb6b4a9ba" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HalloWCF.Host/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="b4cef4c6-d2a1-4c73-9022-9df7be1641ce" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HalloWCF.Host/Service1/mex" />
+    <MetadataFile FileName="HalloWCF.Host.xsd" MetadataType="Schema" ID="d9cbdffe-4f8b-4448-be4d-0f192125ebe2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HalloWCF.Host/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
