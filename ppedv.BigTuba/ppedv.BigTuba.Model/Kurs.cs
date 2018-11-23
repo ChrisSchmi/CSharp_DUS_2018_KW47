@@ -11,7 +11,7 @@ namespace ppedv.BigTuba.Model
         public int Level { get; set; }
         public int Level2 { get; set; }
 
-        public HashSet<Teilnehmer> Teilnehmer { get; set; } = new HashSet<Teilnehmer>();
+        public virtual HashSet<Teilnehmer> Teilnehmer { get; set; } = new HashSet<Teilnehmer>();
 
     }
 }

@@ -21,8 +21,8 @@ namespace ppedv.BigTuba.Logic
 
         public void CreateDemoDaten()
         {
-            var k1 = new Kurs() { Beschreibung = "C# für Anfänger", Datum = DateTime.Now };
-            var k2 = new Kurs() { Beschreibung = "C# für Fortgeschrittene", Datum = DateTime.Now.AddDays(4) };
+            var k1 = new Kurs() { Name = "C# für Anfänger", Datum = DateTime.Now };
+            var k2 = new Kurs() { Name = "C# für Fortgeschrittene", Datum = DateTime.Now.AddDays(4) };
 
             for (int i = 0; i < 100; i++)
             {

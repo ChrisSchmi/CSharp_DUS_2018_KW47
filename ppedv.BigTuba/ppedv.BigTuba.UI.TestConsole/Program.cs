@@ -16,14 +16,17 @@ namespace ppedv.BigTuba.UI.TestConsole
 
             var core = new Core();
 
-            core.CreateDemoDaten();
+            //core.CreateDemoDaten();
 
             foreach (var k in core.Repository.GetAll<Kurs>())
             {
                 Console.WriteLine($"{k.Name} {k.Datum:d}");
                 foreach (var t in k.Teilnehmer)
                 {
-                    Console.WriteLine($"{t.Name}");
+                    Console.WriteLine($"{t.Name} {t.GebDatum:d}");
+
+                    if(t.GebDatum.DayOfYear == k.Datum.DayOfYear)
+                        Console.WriteLine("🎂🎂");
                 }
             }
 
