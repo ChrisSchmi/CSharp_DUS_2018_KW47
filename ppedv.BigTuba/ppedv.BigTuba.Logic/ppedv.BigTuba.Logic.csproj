@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.BigTuba.Data.EF\ppedv.BigTuba.Data.EF.csproj" />
+    <ProjectReference Include="..\ppedv.BigTuba.Model\ppedv.BigTuba.Model.csproj" />
+  </ItemGroup>
+
 </Project>
