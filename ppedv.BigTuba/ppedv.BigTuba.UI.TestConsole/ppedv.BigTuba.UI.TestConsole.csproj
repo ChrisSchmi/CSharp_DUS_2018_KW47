@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,8 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ppedv.BigTuba.Data.EF\ppedv.BigTuba.Data.EF.csproj">
+      <Project>{82A0E237-5D4D-4C99-BD41-2C81EA9FE796}</Project>
+      <Name>ppedv.BigTuba.Data.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ppedv.BigTuba.Logic\ppedv.BigTuba.Logic.csproj">
       <Project>{9acc350d-9945-456b-ba35-9dd1510c22e2}</Project>
       <Name>ppedv.BigTuba.Logic</Name>

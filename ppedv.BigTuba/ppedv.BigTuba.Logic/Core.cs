@@ -16,8 +16,7 @@ namespace ppedv.BigTuba.Logic
             Repository = repos;
         }
 
-        public Core() : this(new Data.EF.EfRepository())
-        { }
+
 
         public void CreateDemoDaten()
         {

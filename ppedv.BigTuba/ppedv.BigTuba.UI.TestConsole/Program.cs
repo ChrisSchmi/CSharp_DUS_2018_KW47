@@ -1,5 +1,8 @@
-﻿using ppedv.BigTuba.Logic;
+﻿using Autofac;
+using ppedv.BigTuba.Data.EF;
+using ppedv.BigTuba.Logic;
 using ppedv.BigTuba.Model;
+using ppedv.BigTuba.Model.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +16,15 @@ namespace ppedv.BigTuba.UI.TestConsole
         static void Main(string[] args)
         {
             Console.WriteLine("*** BIG TUBA ***");
+            var builder = new ContainerBuilder();
 
-            var core = new Core();
+            // Once a listener has been fully constructed and is
+            // ready to be used, automatically start listening.
+            builder.RegisterType(typeof(EfRepository))
+                   .As<IRepository>();
+            var conainer =  builder.Build();
+
+            var core = new Core(conainer.Resolve<IRepository>());
 
             //core.CreateDemoDaten();
 
@@ -25,7 +35,7 @@ namespace ppedv.BigTuba.UI.TestConsole
                 {
                     Console.WriteLine($"{t.Name} {t.GebDatum:d}");
 
-                    if(t.GebDatum.DayOfYear == k.Datum.DayOfYear)
+                    if (t.GebDatum.DayOfYear == k.Datum.DayOfYear)
                         Console.WriteLine("🎂🎂");
                 }
             }
