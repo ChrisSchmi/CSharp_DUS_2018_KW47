@@ -16,6 +16,8 @@ namespace ppedv.BigTuba.UI.TestConsole
 
             var core = new Core();
 
+            core.CreateDemoDaten();
+
             foreach (var k in core.Repository.GetAll<Kurs>())
             {
                 Console.WriteLine($"{k.Name} {k.Datum:d}");

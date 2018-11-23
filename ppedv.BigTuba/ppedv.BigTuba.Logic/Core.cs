@@ -19,6 +19,23 @@ namespace ppedv.BigTuba.Logic
         public Core() : this(new Data.EF.EfRepository())
         { }
 
+        public void CreateDemoDaten()
+        {
+            var k1 = new Kurs() { Beschreibung = "C# für Anfänger", Datum = DateTime.Now };
+            var k2 = new Kurs() { Beschreibung = "C# für Fortgeschrittene", Datum = DateTime.Now.AddDays(4) };
+
+            for (int i = 0; i < 100; i++)
+            {
+                var t = new Teilnehmer() { Name = $"Fred #{i:000}", GebDatum = DateTime.Now.AddYears(-40).AddDays(i * 17) };
+                if (i % 2 == 0)
+                    k1.Teilnehmer.Add(t);
+                if (i % 3 == 0)
+                    k2.Teilnehmer.Add(t);
+            }
+            Repository.Add(k1);
+            Repository.Add(k2);
+            Repository.SaveAll();
+        }
 
         public void CheckIfTeilnehmerHasBirthdayThenPlayHappyBirthdaySound()
         {

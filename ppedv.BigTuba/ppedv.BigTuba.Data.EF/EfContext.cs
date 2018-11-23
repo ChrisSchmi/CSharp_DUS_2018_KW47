@@ -13,10 +13,25 @@ namespace ppedv.BigTuba.Data.EF
         public DbSet<Teilnehmer> Teilnehmer { get; set; }
         public DbSet<Kurs> Kurse { get; set; }
 
-        public EfContext(string conString) : base(conString)
-        { }
-        public EfContext()
-        { }
+
+        public EfContext():base("Server=.;Database=BigTuba;Trusted_Connection=true")
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+        //public EfContext(string conString) : base(conString)
+        //{ }
+        //public EfContext()
+        //{ }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

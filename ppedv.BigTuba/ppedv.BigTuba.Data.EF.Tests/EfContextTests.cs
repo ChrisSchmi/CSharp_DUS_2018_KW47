@@ -10,7 +10,7 @@ namespace ppedv.BigTuba.Data.EF.Tests
         [TestMethod]
         public void EfContext_can_create_Database()
         {
-            using (var con = new EfContext("Server=.;Database=Tuba;Trusted_Connection=true"))
+            using (var con = new EfContext())
             {
                 if (con.Database.Exists())
                     con.Database.Delete();
