@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.BigTuba.Logic", "pped
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.BigTuba.UI.TestConsole", "ppedv.BigTuba.UI.TestConsole\ppedv.BigTuba.UI.TestConsole.csproj", "{67ED35AC-AEC9-406C-9B65-532D530F5A6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.BigTuba.Logic.Test", "ppedv.BigTuba.Logic.Test\ppedv.BigTuba.Logic.Test.csproj", "{58533413-9975-495D-9DDF-9FDC0524B7B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{67ED35AC-AEC9-406C-9B65-532D530F5A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67ED35AC-AEC9-406C-9B65-532D530F5A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67ED35AC-AEC9-406C-9B65-532D530F5A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58533413-9975-495D-9DDF-9FDC0524B7B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58533413-9975-495D-9DDF-9FDC0524B7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58533413-9975-495D-9DDF-9FDC0524B7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58533413-9975-495D-9DDF-9FDC0524B7B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
