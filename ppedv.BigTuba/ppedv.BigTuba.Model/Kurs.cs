@@ -9,6 +9,8 @@ namespace ppedv.BigTuba.Model
         public string Beschreibung { get; set; }
         public DateTime Datum { get; set; }
         public int Level { get; set; }
+        public int Level2 { get; set; }
+
         public HashSet<Teilnehmer> Teilnehmer { get; set; } = new HashSet<Teilnehmer>();
 
     }
